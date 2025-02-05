@@ -5,6 +5,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/online_library/pom.xml" />
+        <option value="$PROJECT_DIR$/online_library_pojo/pom.xml" />
+        <option value="$PROJECT_DIR$/online_library_utils/pom.xml" />
       </list>
     </option>
   </component>

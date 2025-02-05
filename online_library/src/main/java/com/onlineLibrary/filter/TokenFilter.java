@@ -2,6 +2,7 @@ package com.onlineLibrary.filter;
 
 import com.onlineLibrary.utils.JwtUtils;
 import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -22,7 +23,7 @@ public class TokenFilter implements Filter {
         //获取请求路径
         String requestURI = request.getRequestURI();
         //判断是否为login
-        if (requestURI.contains("/login01")) {
+        if (requestURI.contains("/login01")|| requestURI.contains("/register01")) {
             filterChain.doFilter(request, response);
             return;
         }
