@@ -18,5 +18,5 @@ public class BooksDTO {
     private String publisher; // 出版社
     private String isbn; // ISBN
     private LocalDateTime publishDate; // 出版日期
-    private List<String> category; // 分类
+    private String category; // 分类
 }

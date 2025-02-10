@@ -5,12 +5,22 @@
 
 <mapper namespace="com.onlineLibrary.mapper.HomePageMapper">
 
-    <select id="select01" resultType="com.onlineLibrary.entity.Testbooks">
-        select * from testbooks
+    <select id="select01" resultType="com.onlineLibrary.entity.Books">
+        select * from book
         <where>
-            <if test="name != null and name !=''">
-                and name like concat('%',#{name},'%')
+            <if test="title != null and title !=''">
+                and title like concat('%',#{title},'%')
             </if>
+            <if test="author != null and author !=''">
+                and author like concat('%',#{author},'%')
+            </if>
+            <if test="isbn != null and isbn !=''">
+                and isbn like concat('%',#{isbn},'%')
+            </if>
+            <if test="category != null and category !=''">
+                and category like concat('%',#{category},'%')
+            </if>
+
         </where>
     </select>
 </mapper>

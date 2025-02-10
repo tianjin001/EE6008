@@ -1,7 +1,7 @@
 package com.onlineLibrary.controller;
 
 
-import com.onlineLibrary.DTO.TestbooksPageQueryDTO;
+import com.onlineLibrary.DTO.BooksPageQueryDTO;
 import com.onlineLibrary.entity.Books;
 import com.onlineLibrary.result.PageResult;
 import com.onlineLibrary.result.Result;
@@ -24,13 +24,13 @@ public class HomePageController {
 
     /**
      * 条件查询书籍并分页展示
-     * @param testbooksPageQueryDTO
+     * @param booksPageQueryDTO
      * @return
      */
-    //TODO 数据库待完善,参数待修改
+    //TODO 条件查询 非hompage多功能查询
     @GetMapping("/page")
-    public Result<PageResult> pageQuery(TestbooksPageQueryDTO testbooksPageQueryDTO){
-        PageResult pageResult = homePageService.pageQuery(testbooksPageQueryDTO);
+    public Result<PageResult> pageQuery(BooksPageQueryDTO booksPageQueryDTO){
+        PageResult pageResult = homePageService.pageQuery(booksPageQueryDTO);
         return Result.success(pageResult);
     }
 

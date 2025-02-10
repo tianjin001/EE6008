@@ -9,14 +9,14 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TestbooksPageQueryDTO implements Serializable {
+public class BooksPageQueryDTO implements Serializable {
 
 
-    private String name;
+    private String title;
     private String author;
+
     //页码
     private int page;
-
     //每页显示记录数
     private int pageSize;
 

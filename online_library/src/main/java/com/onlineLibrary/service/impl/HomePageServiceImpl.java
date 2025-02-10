@@ -2,15 +2,14 @@ package com.onlineLibrary.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.onlineLibrary.DTO.TestbooksPageQueryDTO;
+import com.onlineLibrary.DTO.BooksPageQueryDTO;
+import com.onlineLibrary.VO.BooksVO;
 import com.onlineLibrary.entity.Books;
-import com.onlineLibrary.entity.Testbooks;
 import com.onlineLibrary.mapper.HomePageMapper;
 import com.onlineLibrary.result.PageResult;
 import com.onlineLibrary.service.HomePageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -22,20 +21,19 @@ public class HomePageServiceImpl implements HomePageService {
 
     /**
      * 主页面书籍展示
-     * @param testbooksPageQueryDTO
+     * @param booksPageQueryDTO
      * @return
      */
     @Override
-    public PageResult pageQuery(TestbooksPageQueryDTO testbooksPageQueryDTO) {
+    public PageResult pageQuery(BooksPageQueryDTO booksPageQueryDTO) {
         //设置分页参数
-        PageHelper.startPage(testbooksPageQueryDTO.getPage(), testbooksPageQueryDTO.getPageSize());
-
+        PageHelper.startPage(booksPageQueryDTO.getPage(), booksPageQueryDTO.getPageSize());
         //调用Mapper查数据
-        Page<Testbooks> page = homePageMapper.select01(testbooksPageQueryDTO);
+        Page<BooksVO> page = homePageMapper.select01(booksPageQueryDTO);
 
         //数据封装
         long total = page.getTotal();
-        List<Testbooks> records = page.getResult();
+        List<BooksVO> records = page.getResult();
         //返回
         return new PageResult(total, records);
     }

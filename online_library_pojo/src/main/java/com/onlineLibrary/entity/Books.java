@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -16,7 +15,7 @@ public class Books {
         private String publisher; // 出版社
         private String isbn; // ISBN
         private LocalDateTime publishDate; // 出版日期
-        private List<String> category; // 分类
+        private String category; // 分类
         private String cover; // 图书封面
         private Double rating; // 评分
         private String description; // 内容简介

@@ -8,7 +8,6 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 /**
  * 令牌校验的拦截器
- * 相较于过滤器而言 不用时不用注释掉@Component ，而是再配置类中处理
  */
 
 @Component

@@ -1,6 +1,6 @@
 package com.onlineLibrary.service;
 
-import com.onlineLibrary.DTO.TestbooksPageQueryDTO;
+import com.onlineLibrary.DTO.BooksPageQueryDTO;
 import com.onlineLibrary.entity.Books;
 import com.onlineLibrary.result.PageResult;
 
@@ -9,10 +9,10 @@ import java.util.List;
 public interface HomePageService {
     /**
      * 主页面书籍展示
-     * @param testbooksPageQueryDTO
+     * @param booksPageQueryDTO
      * @return
      */
-    PageResult pageQuery(TestbooksPageQueryDTO testbooksPageQueryDTO);
+    PageResult pageQuery(BooksPageQueryDTO booksPageQueryDTO);
 
     /**
      * 查询评分最高书籍
