@@ -1,6 +1,6 @@
 package com.onlineLibrary.mapper;
 
-import com.onlineLibrary.pojo.User;
+import com.onlineLibrary.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserMapper {

@@ -1,10 +1,10 @@
 package com.onlineLibrary.service;
 
-import com.onlineLibrary.pojo.LoginInfo;
-import com.onlineLibrary.pojo.User;
+import com.onlineLibrary.VO.LoginVO;
+import com.onlineLibrary.entity.User;
 
 public interface Login01Service {
-     LoginInfo login01(User user);
+     LoginVO login01(User user);
 
      User selectByUsername(User user);
 

@@ -1,12 +1,9 @@
 package com.onlineLibrary.exception;
 
-import com.onlineLibrary.pojo.Result;
+import com.onlineLibrary.result.Result;
 import org.springframework.dao.DuplicateKeyException;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.context.request.WebRequest;
 
 @RestControllerAdvice
 public class GlobalExceptionHandle {

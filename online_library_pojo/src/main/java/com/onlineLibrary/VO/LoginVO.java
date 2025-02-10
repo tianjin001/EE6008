@@ -1,20 +1,20 @@
-package com.onlineLibrary.pojo;
+package com.onlineLibrary.VO;
 
 import lombok.Data;
 
 @Data
 
-public class LoginInfo {
+public class LoginVO {
     private Integer id;
     private String username;
     private String name;
     private String token;
 
     // 无参构造函数
-    public LoginInfo() {}
+    public LoginVO() {}
 
     // 带参构造函数
-    public LoginInfo(Integer id, String username, String name, String token) {
+    public LoginVO(Integer id, String username, String name, String token) {
         this.id = id;
         this.username = username;
         this.name = name;

@@ -1,4 +1,4 @@
-package com.onlineLibrary.pojo;
+package com.onlineLibrary.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

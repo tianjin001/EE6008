@@ -1,8 +1,8 @@
 package com.onlineLibrary.service.impl;
 
 import com.onlineLibrary.mapper.UserMapper;
-import com.onlineLibrary.pojo.LoginInfo;
-import com.onlineLibrary.pojo.User;
+import com.onlineLibrary.VO.LoginVO;
+import com.onlineLibrary.entity.User;
 import com.onlineLibrary.service.Login01Service;
 import com.onlineLibrary.utils.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +17,13 @@ public class Login01ServiceImpl implements Login01Service {
     private UserMapper userMapper;
 
     @Override
-    public LoginInfo login01(User user){
+    public LoginVO login01(User user){
          User user1 = userMapper.select(user);
          if(user1 != null){
              Map<String,Object> claims = new HashMap<>();
              claims.put("id",user1.getId());
              String jwt = JwtUtils.generateJwt(claims);
-             return new LoginInfo(user1.getId(),user1.getUsername(),user1.getName(),jwt);
+             return new LoginVO(user1.getId(),user1.getUsername(),user1.getName(),jwt);
          }else {
              return null;
          }
