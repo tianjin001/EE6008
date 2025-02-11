@@ -27,7 +27,7 @@ public class JwtUtils {
     }
 
     // 解析JWT令牌的方法
-    public static Jws<Claims> parseJwt(String token)  {
+    public static Jws<Claims> parseJwt(String token) {
         try {
             // 解析JWT并返回claims
             return Jwts.parser()
@@ -36,7 +36,7 @@ public class JwtUtils {
                     .parseClaimsJws(token);
         } catch (JwtException e) {
             // 如果JWT验证失败或过期，可以处理异常
-            System.out.println("无效的JWT令牌或令牌已过期");
+            System.out.println("~无效的JWT令牌或令牌已过期~");
             return null;
         }
     }

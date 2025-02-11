@@ -1,5 +1,8 @@
-C:\Users\86178\Desktop\JAVA\EE6008\online_library_pojo\src\main\java\com\onlineLibrary\DTO\BookDTO.java
-C:\Users\86178\Desktop\JAVA\EE6008\online_library_pojo\src\main\java\com\onlineLibrary\entity\LoginInfo.java
-C:\Users\86178\Desktop\JAVA\EE6008\online_library_pojo\src\main\java\com\onlineLibrary\entity\PageResult.java
-C:\Users\86178\Desktop\JAVA\EE6008\online_library_pojo\src\main\java\com\onlineLibrary\entity\Result.java
+C:\Users\86178\Desktop\JAVA\EE6008\online_library_pojo\src\main\java\com\onlineLibrary\DTO\BooksDTO.java
+C:\Users\86178\Desktop\JAVA\EE6008\online_library_pojo\src\main\java\com\onlineLibrary\DTO\BooksPageQueryDTO.java
+C:\Users\86178\Desktop\JAVA\EE6008\online_library_pojo\src\main\java\com\onlineLibrary\DTO\CommentsDTO.java
+C:\Users\86178\Desktop\JAVA\EE6008\online_library_pojo\src\main\java\com\onlineLibrary\entity\Books.java
+C:\Users\86178\Desktop\JAVA\EE6008\online_library_pojo\src\main\java\com\onlineLibrary\entity\Comments.java
 C:\Users\86178\Desktop\JAVA\EE6008\online_library_pojo\src\main\java\com\onlineLibrary\entity\User.java
+C:\Users\86178\Desktop\JAVA\EE6008\online_library_pojo\src\main\java\com\onlineLibrary\VO\BooksVO.java
+C:\Users\86178\Desktop\JAVA\EE6008\online_library_pojo\src\main\java\com\onlineLibrary\VO\LoginVO.java
