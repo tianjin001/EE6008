@@ -12,4 +12,18 @@ public interface BookPageMapper {
      */
     @AutoFill(value = OperationType.INSERT)
     void insertComment(Comments comments);
+
+    /**
+     * 计算书籍均分
+     * @param bookId
+     * @return
+     */
+    Double getAverageRating(Integer bookId);
+
+    /**
+     * 更新book rating
+     * @param bookId
+     * @param averageRating
+     */
+    void updateBookRating(Integer bookId, Double averageRating);
 }

@@ -5,6 +5,7 @@ import com.onlineLibrary.DTO.CommentsDTO;
 import com.onlineLibrary.result.Result;
 import com.onlineLibrary.service.BookPageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,20 +17,19 @@ public class BookPageController {
 
     @Autowired
     private BookPageService bookPageService;
-
-    //TODO 创建review表
-    // 写评论 评分插入到review表-book表分数改变
-    // service：1.插入 reviewMapper 2.均值 reviewMapper 3.book更新数据 bookMapper
-    // 传递给homepage的数据改变
-
     /**
-     * 插入评论及打分
+     * 插入评论及打分 并更新
      * @param commentsDTO
      * @return
      */
     @PostMapping
     public Result insertComments(@RequestBody CommentsDTO commentsDTO){
+        //插入评论
         bookPageService.insertComments(commentsDTO);
-        return Result.success();
+        // 获取最新的书籍评分平均值 返回给前端
+        Double averageRating = bookPageService.getAverageRating(commentsDTO.getBookId());
+        //更新rating到book表
+        bookPageService.updateRating(commentsDTO.getBookId(),averageRating);
+        return Result.success(averageRating);
     }
 }

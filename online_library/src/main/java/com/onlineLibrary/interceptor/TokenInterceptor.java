@@ -12,7 +12,6 @@ import org.springframework.web.servlet.HandlerInterceptor;
 /**
  * 令牌校验的拦截器
  */
-
 @Component
 public class TokenInterceptor implements HandlerInterceptor{
 
@@ -21,7 +20,7 @@ public class TokenInterceptor implements HandlerInterceptor{
 
         //获取请求头 token
         String token = request.getHeader("token");
-        System.out.println(token);
+        System.out.println("token:"+token);
         //判断token是否存在 不存在说明用户未登录 响应401(或者响应超时，请重新登录等)
         if (token == null || token.isEmpty()) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
@@ -38,7 +37,7 @@ public class TokenInterceptor implements HandlerInterceptor{
 
             // 从 claims 中提取用户 id
             Integer userId = (Integer) claims.getBody().get("id");
-            System.out.println(userId);
+            System.out.println("userId:"+userId);
             if (userId == null) {
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 return false;

@@ -11,4 +11,14 @@
         VALUES (#{bookId},#{content},#{rating},
                 #{createTime},#{createUser},#{updateTime},#{updateUser})
     </insert>
+
+    <select id="getAverageRating" resultType="java.lang.Double">
+        SELECT AVG(rating) FROM comments WHERE book_id = #{bookId}
+    </select>
+
+    <update id="updateBookRating">
+        UPDATE book
+        SET rating = #{averageRating}
+        WHERE id = #{bookId}
+    </update>
 </mapper>
