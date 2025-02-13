@@ -44,6 +44,7 @@ public class AutoFillAspect {
         //准备赋值数据
         LocalDateTime now = LocalDateTime.now();
         Integer currentId = BaseContext.getCurrentId();
+
         //根据类型赋值 插入赋值4条 更新赋值两条
         if (operationType == OperationType.INSERT) {
             try {

@@ -24,7 +24,10 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(tokenInterceptor)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/login01","/register01","logout");
+                .excludePathPatterns("/admin/login",
+                        "/admin/register01",
+                        "/admin/logout","/user/login");
+
     }
 
     //确保 PageHelper 被正确配置并且插件被加载到 MyBatis 配置中
@@ -36,4 +39,5 @@ public class WebConfig implements WebMvcConfigurer {
         pageHelper.setProperties(properties);
         return pageHelper;
     }
+
 }

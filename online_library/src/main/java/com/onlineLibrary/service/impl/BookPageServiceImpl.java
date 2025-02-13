@@ -24,14 +24,17 @@ public class BookPageServiceImpl implements BookPageService {
     @Transactional
     @Override
     public void insertComments(CommentsDTO commentsDTO) {
+
         Comments comments = new Comments();
         BeanUtils.copyProperties(commentsDTO, comments);
+
         bookPageMapper.insertComment(comments);
         // 计算书籍的平均评分
         Double averageRating = bookPageMapper.getAverageRating(comments.getBookId());
         //更新到book表中
         bookPageMapper.updateBookRating(comments.getBookId(), averageRating);
     }
+
 
     /**
      * 计算均值

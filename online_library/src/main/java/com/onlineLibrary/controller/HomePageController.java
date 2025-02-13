@@ -27,7 +27,7 @@ public class HomePageController {
      * @param booksPageQueryDTO
      * @return
      */
-    //条件查询 非hompage多功能查询
+    //条件查询 非homepage多功能查询
     @GetMapping("/page")
     public Result<PageResult> pageQuery(BooksPageQueryDTO booksPageQueryDTO){
         PageResult pageResult = homePageService.pageQuery(booksPageQueryDTO);

@@ -4,17 +4,17 @@ import lombok.Data;
 
 @Data
 
-public class LoginVO {
+public class StaffLoginVO {
     private Integer id;
     private String username;
     private String name;
     private String token;
 
     // 无参构造函数
-    public LoginVO() {}
+    public StaffLoginVO() {}
 
     // 带参构造函数
-    public LoginVO(Integer id, String username, String name, String token) {
+    public StaffLoginVO(Integer id, String username, String name, String token) {
         this.id = id;
         this.username = username;
         this.name = name;

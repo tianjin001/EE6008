@@ -15,6 +15,7 @@ public class Comments {
     private Integer bookId;
     private String content;
     private Double rating;
+
     private LocalDateTime createTime;
     private Integer createUser;
     private LocalDateTime updateTime;
