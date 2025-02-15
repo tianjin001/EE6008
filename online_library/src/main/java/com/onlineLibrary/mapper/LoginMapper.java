@@ -1,6 +1,7 @@
 package com.onlineLibrary.mapper;
 
 import com.onlineLibrary.DTO.LoginDTO;
+import com.onlineLibrary.DTO.UserDTO;
 import com.onlineLibrary.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 @Mapper
@@ -10,6 +11,6 @@ public interface LoginMapper {
 
     User selectByCondition(String username);
 
-    void add(User user);
+    void add(UserDTO userDTO);
 
 }

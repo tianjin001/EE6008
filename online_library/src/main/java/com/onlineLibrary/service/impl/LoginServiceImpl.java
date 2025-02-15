@@ -1,6 +1,7 @@
 package com.onlineLibrary.service.impl;
 
 import com.onlineLibrary.DTO.LoginDTO;
+import com.onlineLibrary.DTO.UserDTO;
 import com.onlineLibrary.entity.User;
 import com.onlineLibrary.mapper.LoginMapper;
 import com.onlineLibrary.VO.LoginVO;
@@ -34,13 +35,13 @@ public class LoginServiceImpl implements LoginService {
     //user.getUsername(), user.getPassword()
 
     @Override
-    public User selectByUsername(User user) {
-        return loginMapper.selectByCondition(user.getUsername());
+    public User selectByUsername(UserDTO userDTO) {
+        return loginMapper.selectByCondition(userDTO.getUsername());
     }
 
     @Override
-    public void register01(User user) {
-        loginMapper.add(user);
+    public void register01(UserDTO userDTO) {
+        loginMapper.add(userDTO);
     }
 
 

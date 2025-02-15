@@ -1,6 +1,7 @@
 package com.onlineLibrary.controller;
 
 import com.onlineLibrary.DTO.LoginDTO;
+import com.onlineLibrary.DTO.UserDTO;
 import com.onlineLibrary.VO.LoginVO;
 import com.onlineLibrary.entity.User;
 import com.onlineLibrary.result.Result;
@@ -45,18 +46,21 @@ public class LoginController {
 
     /**
      * 普通用户注册
-     * @param user
+     * @param userDTO
      * @return
      */
     @PostMapping("/register01")
-    public Result register01(@RequestBody User user) {
-        User user1 = loginService.selectByUsername(user);
+    public Result register01(@RequestBody UserDTO userDTO) {
+        User user1 = loginService.selectByUsername(userDTO);
+        String password = userDTO.getPassword();
+        userDTO.setPassword(DigestUtils.md5DigestAsHex(password.getBytes()));
+
         if (user1 != null) {
             System.out.println("username:"+ user1.getUsername()+"is existed");
             return Result.error("username is existed");
         }else{
-            loginService.register01(user);
-            return Result.success(user);
+            loginService.register01(userDTO);
+            return Result.success(userDTO);
         }
     }
 }

@@ -41,6 +41,7 @@ public class AutoFillAspect {
             return;
         }
         Object entity = args[0];
+
         //准备赋值数据
         LocalDateTime now = LocalDateTime.now();
         Integer currentId = BaseContext.getCurrentId();
