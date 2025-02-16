@@ -1,24 +1,25 @@
-package com.onlineLibrary.service;
+package com.onlineLibrary.mapper;
 
-import com.onlineLibrary.DTO.BooksDTO;
 import com.onlineLibrary.entity.Books;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-public interface BookManagementService {
+@Mapper
+public interface BookManagementMapper {
 
     /**
      * 新增书籍
-     * @param booksDTO
+     * @param books
      */
-    void addbook(BooksDTO booksDTO);
+    void addbook(Books books);
 
     /**
      * 删除书籍 (单个 and 批量)
      * @param ids
      * @return
      */
-    void deleteBooks(List<Integer> ids);
+    void deletByIds(List<Integer> ids);
 
     /**
      * 根据id查询书籍信息 用于查询回显
@@ -29,8 +30,8 @@ public interface BookManagementService {
 
     /**
      * 修改员工信息
-     * @param booksDTO
+     * @param books
      * @return
      */
-    void updateBooks(BooksDTO booksDTO);
+    void updateBooks(Books books);
 }
