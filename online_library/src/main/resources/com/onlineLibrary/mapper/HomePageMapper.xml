@@ -20,7 +20,6 @@
             <if test="category != null and category !=''">
                 and category like concat('%',#{category},'%')
             </if>
-
         </where>
     </select>
 </mapper>

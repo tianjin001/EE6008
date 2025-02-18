@@ -27,12 +27,14 @@ public class UserManagementController {
     @Autowired
     private LoginService loginService;
 
+
     /**
      * 条件查询员工并分页
      * @param usersPageQueryDTO
      * @return
      */
     @GetMapping("/page")
+    @CrossOrigin()
     public Result<PageResult> pageQuery(UsersPageQueryDTO usersPageQueryDTO) {
         PageResult pageResult = userService.pageQuery(usersPageQueryDTO);
         return Result.success(pageResult);
@@ -42,6 +44,7 @@ public class UserManagementController {
      * 新增管理员
      */
     @PostMapping
+    @CrossOrigin()
     public  Result addAdmin(@RequestBody UserDTO userDTO) {
         User user = loginService.selectByUsername(userDTO);
         if (user != null) {
@@ -59,6 +62,7 @@ public class UserManagementController {
      * @return
      */
     @GetMapping("/{id}")
+    @CrossOrigin()
     public Result<User> getById(@PathVariable("id") Integer id) {
         User user = userService.getById(id);
         return Result.success(user);
@@ -70,6 +74,7 @@ public class UserManagementController {
      * @return
      */
     @PutMapping
+    @CrossOrigin()
     public Result updateUser(@RequestBody UserDTO userDTO) {
         userService.updateUser(userDTO);
         return Result.success();
@@ -81,6 +86,7 @@ public class UserManagementController {
      * @return
      */
     @DeleteMapping
+    @CrossOrigin()
     public Result deleteDishAndFlavor(@RequestParam List<Integer> ids) {
         userService.deleteAdminOrUser(ids);
         return Result.success();

@@ -5,6 +5,7 @@ import com.onlineLibrary.DTO.BooksDTO;
 import com.onlineLibrary.DTO.BooksPageQueryDTO;
 import com.onlineLibrary.DTO.UserDTO;
 import com.onlineLibrary.entity.Books;
+import com.onlineLibrary.entity.RequestForm;
 import com.onlineLibrary.entity.User;
 import com.onlineLibrary.result.PageResult;
 import com.onlineLibrary.result.Result;
@@ -13,7 +14,9 @@ import com.onlineLibrary.service.HomePageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/admin/book")
@@ -30,6 +33,7 @@ public class BookManagementController {
      * @return
      */
     @GetMapping("/page")
+    @CrossOrigin()
     public Result<PageResult> pageQuery(BooksPageQueryDTO booksPageQueryDTO) {
         PageResult pageResult = homePageService.pageQuery(booksPageQueryDTO);
         return Result.success(pageResult);
@@ -41,6 +45,7 @@ public class BookManagementController {
      * @return
      */
     @PostMapping
+    @CrossOrigin()
     public Result addAdmin(@RequestBody BooksDTO booksDTO) {
         bookManagementService.addbook(booksDTO);
         return Result.success();
@@ -52,6 +57,7 @@ public class BookManagementController {
      * @return
      */
     @DeleteMapping
+    @CrossOrigin()
     public Result deleteBooks(@RequestParam List<Integer> ids) {
         bookManagementService.deleteBooks(ids);
         return Result.success();
@@ -63,6 +69,7 @@ public class BookManagementController {
      * @return
      */
     @GetMapping("/{id}")
+    @CrossOrigin()
     public Result<Books> getById(@PathVariable("id") Integer id) {
         Books books = bookManagementService.getById(id);
         return Result.success(books);
@@ -74,10 +81,10 @@ public class BookManagementController {
      * @return
      */
     @PutMapping
+    @CrossOrigin()
     public Result updateBooks(@RequestBody BooksDTO booksDTO) {
         bookManagementService.updateBooks(booksDTO);
         return Result.success();
     }
-
 
 }

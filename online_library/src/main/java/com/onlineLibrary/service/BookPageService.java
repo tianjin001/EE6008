@@ -1,6 +1,8 @@
 package com.onlineLibrary.service;
 
+import com.onlineLibrary.DTO.BooksPageQueryDTO;
 import com.onlineLibrary.DTO.CommentsDTO;
+import com.onlineLibrary.result.PageResult;
 
 public interface BookPageService {
 
@@ -24,4 +26,11 @@ public interface BookPageService {
      * @param averageRating
      */
     void updateRating(Integer bookId, Double averageRating);
+
+    /**
+     * 查询书籍
+     * @param booksPageQueryDTO
+     * @return
+     */
+    PageResult pageQuery(BooksPageQueryDTO booksPageQueryDTO);
 }

@@ -7,6 +7,7 @@ import com.onlineLibrary.result.PageResult;
 import com.onlineLibrary.result.Result;
 import com.onlineLibrary.service.HomePageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +30,7 @@ public class HomePageController {
      */
     //条件查询 非homepage多功能查询
     @GetMapping("/page")
+    @CrossOrigin()
     public Result<PageResult> pageQuery(BooksPageQueryDTO booksPageQueryDTO){
         PageResult pageResult = homePageService.pageQuery(booksPageQueryDTO);
         return Result.success(pageResult);
@@ -39,6 +41,7 @@ public class HomePageController {
      * @return
      */
     @GetMapping()
+    @CrossOrigin()
     public Result<Map<String,List<Books>>> topBooksQuery(){
 
         List<Books> topBooks = homePageService.topbooksQuery();

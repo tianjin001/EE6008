@@ -8,10 +8,7 @@ import com.onlineLibrary.result.Result;
 import com.onlineLibrary.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping()
@@ -25,6 +22,7 @@ public class LoginController {
      * @return
      */
     @PostMapping("/login")
+    @CrossOrigin()
     public Result<LoginVO> login01(@RequestBody LoginDTO loginDTO) {
 
         String password = loginDTO.getPassword();
@@ -40,6 +38,7 @@ public class LoginController {
     }
 
     @PostMapping("/logout")
+    @CrossOrigin()
     public Result<String> logout() {
         return Result.success();
     }
@@ -50,6 +49,7 @@ public class LoginController {
      * @return
      */
     @PostMapping("/register01")
+    @CrossOrigin()
     public Result register01(@RequestBody UserDTO userDTO) {
         User user1 = loginService.selectByUsername(userDTO);
         String password = userDTO.getPassword();

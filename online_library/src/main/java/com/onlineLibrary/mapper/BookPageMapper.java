@@ -1,5 +1,8 @@
 package com.onlineLibrary.mapper;
 
+import com.github.pagehelper.Page;
+import com.onlineLibrary.DTO.BooksPageQueryDTO;
+import com.onlineLibrary.VO.BooksVO;
 import com.onlineLibrary.annotation.AutoFill;
 import com.onlineLibrary.entity.Comments;
 import com.onlineLibrary.enumeration.OperationType;
@@ -26,4 +29,11 @@ public interface BookPageMapper {
      * @param averageRating
      */
     void updateBookRating(Integer bookId, Double averageRating);
+
+    /**
+     * 查询书籍
+     * @param booksPageQueryDTO
+     * @return
+     */
+    Page<BooksVO> select01(BooksPageQueryDTO booksPageQueryDTO);
 }

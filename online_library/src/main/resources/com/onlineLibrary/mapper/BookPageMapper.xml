@@ -5,6 +5,7 @@
 
 <mapper namespace="com.onlineLibrary.mapper.BookPageMapper">
 
+    <!--插入评论-->
     <insert id="insertComment" useGeneratedKeys="true" keyProperty="id">
         insert into comments(book_id, content, rating,
                              create_time, create_user, update_time, update_user)
@@ -12,13 +13,34 @@
                 #{createTime},#{createUser},#{updateTime},#{updateUser})
     </insert>
 
+    <!--计算rating-->
     <select id="getAverageRating" resultType="java.lang.Double">
         SELECT AVG(rating) FROM comments WHERE book_id = #{bookId}
     </select>
 
+    <!--更新rating-->
     <update id="updateBookRating">
         UPDATE book
         SET rating = #{averageRating}
         WHERE id = #{bookId}
     </update>
+
+    <!--查询书籍-->
+    <select id="select01" resultType="com.onlineLibrary.VO.BooksVO">
+        select * from book
+        <where>
+            <if test="title != null and title !=''">
+                and title like concat('%',#{title},'%')
+            </if>
+            <if test="author != null and author !=''">
+                and author like concat('%',#{author},'%')
+            </if>
+            <if test="isbn != null and isbn !=''">
+                and isbn like concat('%',#{isbn},'%')
+            </if>
+            <if test="category != null and category !=''">
+                and category like concat('%',#{category},'%')
+            </if>
+        </where>
+    </select>
 </mapper>
