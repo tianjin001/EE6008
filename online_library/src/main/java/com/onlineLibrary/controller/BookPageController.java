@@ -44,4 +44,10 @@ public class BookPageController {
         return Result.success(pageResult);
     }
     //查询
+    @GetMapping ("/sildeQuery")
+    @CrossOrigin()
+    public Result<PageResult> slideQuery(BooksPageQueryDTO booksPageQueryDTO){
+        PageResult pageResult = bookPageService.slideQuery(booksPageQueryDTO);
+        return Result.success(pageResult);
+    }
 }

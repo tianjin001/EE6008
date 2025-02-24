@@ -33,4 +33,6 @@ public interface BookPageService {
      * @return
      */
     PageResult pageQuery(BooksPageQueryDTO booksPageQueryDTO);
+
+    PageResult slideQuery(BooksPageQueryDTO booksPageQueryDTO);
 }

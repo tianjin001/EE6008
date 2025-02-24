@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -71,6 +72,22 @@ public class BookPageServiceImpl implements BookPageService {
         long total = page.getTotal();
         List<BooksVO> records = page.getResult();
         //返回
+        return new PageResult(total, records);
+    }
+
+    @Override
+    public PageResult slideQuery(BooksPageQueryDTO booksPageQueryDTO) {
+        //设置分页参数
+        PageHelper.startPage(booksPageQueryDTO.getPage(), booksPageQueryDTO.getPageSize());
+
+        //调用Mapper查数据
+        LocalDate time = booksPageQueryDTO.getPublishDate();
+        System.out.println(time.getClass());
+        Page<BooksVO> page = bookPageMapper.select02(booksPageQueryDTO);
+        //数据封装
+        long total = page.getTotal();
+        List<BooksVO> records = page.getResult();
+
         return new PageResult(total, records);
     }
 }

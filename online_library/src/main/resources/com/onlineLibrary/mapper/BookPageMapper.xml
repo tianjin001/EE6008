@@ -43,4 +43,19 @@
             </if>
         </where>
     </select>
+
+    <select id="select02" resultType="com.onlineLibrary.VO.BooksVO">
+        select * from book
+        <where>
+            <!--  判断 rating 是否不为空，若不为空则添加 rating 范围筛选条件  -->
+            <if test="rating != null and rating != '' "> and rating BETWEEN #{rating} - 0.1 AND #{rating} + 0.1 </if>
+            <!--  判断 publishDate 是否不为空，若不为空则添加 publishDate 年份范围筛选条件  -->
+            <if test="publishDate != null ">
+                <!--  将传入的日期转换为年份，然后筛选出年份在传入年份前后 1 年的记录  -->
+                and YEAR(publishDate) BETWEEN YEAR(#{publishDate}) - 1 AND YEAR(#{publishDate}) + 1
+            </if>
+            <!--  判断 category 是否不为空，若不为空则添加 category 筛选条件  -->
+            <if test="category != null and category != ''"> and category = #{category} </if>
+        </where>
+    </select>
 </mapper>

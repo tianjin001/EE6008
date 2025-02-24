@@ -33,6 +33,8 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.onlineLibrary.entity
 
+
+
 logging:
     level:
       org.springframework.web: DEBUG

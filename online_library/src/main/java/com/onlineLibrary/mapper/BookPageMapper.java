@@ -36,4 +36,6 @@ public interface BookPageMapper {
      * @return
      */
     Page<BooksVO> select01(BooksPageQueryDTO booksPageQueryDTO);
+
+    Page<BooksVO> select02(BooksPageQueryDTO booksPageQueryDTO);
 }
