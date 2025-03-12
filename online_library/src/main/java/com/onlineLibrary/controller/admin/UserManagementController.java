@@ -87,7 +87,7 @@ public class UserManagementController {
      */
     @DeleteMapping
     @CrossOrigin()
-    public Result deleteDishAndFlavor(@RequestParam List<Integer> ids) {
+    public Result deleteAdminOrUser(@RequestParam List<Integer> ids) {
         userService.deleteAdminOrUser(ids);
         return Result.success();
     }
