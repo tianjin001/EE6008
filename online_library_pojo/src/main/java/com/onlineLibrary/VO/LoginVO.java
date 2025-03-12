@@ -10,6 +10,7 @@ public class LoginVO {
     private String username;
     private String name;
     private String token;
+    private Integer role;
 
     // 无参构造函数
     public LoginVO() {}
