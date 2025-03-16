@@ -16,7 +16,7 @@ public class Books {
         public static final  Double  initial_rating = 0.0;
         public static final  Integer numberOfTotalcopies =20;
         public static final  Integer initial_available_copies = 20;
-        public static final  Integer initial_available = 1;
+        public static final  Boolean initial_available = true;
         public static final  String  initial_location = "Lee Wee Nam Library";
 
         private Integer id; // 图书ID
