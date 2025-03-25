@@ -8,11 +8,13 @@
         <version>3.4.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.ginger</groupId>
     <artifactId>online_library</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>online_library</name>
     <description>online_library</description>
+
     <url/>
     <licenses>
         <license/>
@@ -83,6 +85,7 @@
             <artifactId>online_library_pojo</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        
     </dependencies>
 
     <build>

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,6 +24,8 @@ public class HomePageController {
 
     @Autowired
     private HomePageService homePageService;
+    @Autowired
+    private RestTemplate restTemplate;
 
     /**
      * 条件查询书籍并分页展示
@@ -52,6 +56,25 @@ public class HomePageController {
         result.put("newBooks", newBooks);
 
         return Result.success(result);
+    }
+    @GetMapping("/recent-papers")
+    public Result<?> getRecentPapers() {
+
+        String url = "https://api.openalex.org/works"
+                + "?sort=cited_by_count:desc"
+                + "&select=title,authorships,publication_year,cited_by_count,doi"
+                + "&per-page=10";
+
+
+        // 调用 OpenAlex API
+        Map response = restTemplate.getForObject(url, Map.class);
+        //System.out.println("OpenAlex API Response: " + response);
+        if (response != null) {
+            return Result.success(response);
+        } else {
+            return Result.error("获取论文数据失败");
+        }
+
     }
 
 }
