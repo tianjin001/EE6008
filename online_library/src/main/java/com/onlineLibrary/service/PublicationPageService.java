@@ -5,9 +5,9 @@ import com.onlineLibrary.DTO.PublicationDTO;
 import com.onlineLibrary.result.PageResult;
 
 public interface PublicationPageService {
-    //TODO
+
     /**
-     * 查询书籍
+     * 查询期刊
      * @param publicationDTO
      * @return
      */

@@ -17,7 +17,11 @@ import java.util.List;
 public class PublicationPageServiceImpl implements PublicationPageService {
     @Autowired
     private PublicationPageMapper publicationPageMapper;
-
+    /**
+     * 查询期刊
+     * @param publicationDTO
+     * @return
+     */
     @Override
     public PageResult pageQuery(PublicationDTO publicationDTO) {
         //设置分页参数

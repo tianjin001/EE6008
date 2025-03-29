@@ -7,9 +7,9 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface PublicationPageMapper {
-;
+
     /**
-     * 查询书籍
+     * 查询期刊
      * @param publicationDTO
      * @return
      */
