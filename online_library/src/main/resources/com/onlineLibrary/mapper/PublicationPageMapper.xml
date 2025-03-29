@@ -7,7 +7,7 @@
 
     <!--查询期刊-->
     <select id="select" resultType="com.onlineLibrary.Entity.Publication">
-        select author, title, publication_year, cited_count, doi from publications
+        select id,author, title, publication_year, cited_count, doi from publications
         <where>
             <if test="title != null and title !=''">
                 and title like concat('%',#{title},'%')

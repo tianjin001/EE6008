@@ -1,8 +1,7 @@
 #book表
 create table book
 (
-    id              int auto_increment
-        primary key,
+    id              int auto_increment primary key,
     title           varchar(255)                               not null,
     author          varchar(255)                               not null,
     publisher       varchar(255)                               null,
@@ -19,10 +18,8 @@ create table book
     available       int          default 1                     null,
     create_time     datetime     default CURRENT_TIMESTAMP     null,
     update_time     datetime     default CURRENT_TIMESTAMP     null,
-    constraint isbn
-        unique (isbn),
-    constraint title
-        unique (title)
+    constraint isbn unique (isbn),
+    constraint title unique (title)
 )
     charset = utf8mb4;
 
@@ -30,21 +27,18 @@ create table book
 #user表
 create table user
 (
-    id       int auto_increment
-        primary key,
+    id       int auto_increment primary key,
     username varchar(255)  not null,
     name     varchar(255)  null,
     password varchar(255)  not null,
     role     int default 0 not null,
-    constraint username
-        unique (username)
+    constraint username unique (username)
 )
     charset = utf8mb4;
 
 
 #user表数据
-INSERT INTO user (username, name, password, role)
-VALUES
+INSERT INTO user (username, name, password, role)VALUES
 ('春风拂柳细雨', '张伟', '12345678', '超级管理员'),
 ('秋水共长天', '李娜', '23456789', '管理员'),
 ('夏日微风轻', '王芳', '34567890', '管理员'),
@@ -70,8 +64,7 @@ VALUES
 #评论表
 create table comments
 (
-    id          int auto_increment
-        primary key,
+    id          int auto_increment primary key,
     book_id     int                                 null,
     content     text                                not null,
     rating      decimal(10, 2)                      null,
@@ -90,8 +83,7 @@ create table comments
 #联系我们
 create table contact_form
 (
-    id          int auto_increment
-        primary key,
+    id          int auto_increment primary key,
     email       varchar(255) not null,
     subject     varchar(255) not null,
     message     varchar(255) not null,
@@ -104,8 +96,7 @@ create table contact_form
 #购书请求
 create table request_form
 (
-    id          int auto_increment
-        primary key,
+    id          int auto_increment    primary key,
     title       varchar(255)  not null,
     author      varchar(255)  not null,
     isbn        varchar(255)  null,
@@ -117,15 +108,15 @@ create table request_form
     create_user int           null,
     update_time datetime      null,
     update_user int           null,
-    constraint isbn
-        unique (isbn)
+    constraint isbn         unique (isbn)
 )
     charset = utf8mb4;
+
 
 #期刊表
 CREATE TABLE publications (
              id INT AUTO_INCREMENT PRIMARY KEY, -- 自增主键
-             author VARCHAR(255) NOT NULL, -- 作者
+             author VARCHAR(255) NOT NULL, -- 作者(一作)
              title VARCHAR(255) NOT NULL, -- 文章标题
              publication_year YEAR NOT NULL, -- 发表年份
              cited_count INT DEFAULT 0, -- 被引用次数，默认为0
