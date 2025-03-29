@@ -4,7 +4,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.onlineLibrary.DTO.BooksPageQueryDTO;
 import com.onlineLibrary.VO.BooksVO;
-import com.onlineLibrary.entity.Books;
+import com.onlineLibrary.Entity.Books;
 import com.onlineLibrary.mapper.HomePageMapper;
 import com.onlineLibrary.result.PageResult;
 import com.onlineLibrary.service.HomePageService;

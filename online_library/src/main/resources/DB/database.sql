@@ -121,3 +121,13 @@ create table request_form
         unique (isbn)
 )
     charset = utf8mb4;
+
+#期刊表
+CREATE TABLE publications (
+             id INT AUTO_INCREMENT PRIMARY KEY, -- 自增主键
+             author VARCHAR(255) NOT NULL, -- 作者
+             title VARCHAR(255) NOT NULL, -- 文章标题
+             publicationYear YEAR NOT NULL, -- 发表年份
+             citedCount INT DEFAULT 0, -- 被引用次数，默认为0
+             doi VARCHAR(255) UNIQUE NOT NULL -- DOI，唯一且非空
+);

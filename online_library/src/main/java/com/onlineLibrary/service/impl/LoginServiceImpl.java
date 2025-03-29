@@ -2,7 +2,7 @@ package com.onlineLibrary.service.impl;
 
 import com.onlineLibrary.DTO.LoginDTO;
 import com.onlineLibrary.DTO.UserDTO;
-import com.onlineLibrary.entity.User;
+import com.onlineLibrary.Entity.User;
 import com.onlineLibrary.mapper.LoginMapper;
 import com.onlineLibrary.VO.LoginVO;
 import com.onlineLibrary.service.LoginService;
@@ -43,6 +43,5 @@ public class LoginServiceImpl implements LoginService {
     public void register01(UserDTO userDTO) {
         loginMapper.add(userDTO);
     }
-
 
 }

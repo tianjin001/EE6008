@@ -5,7 +5,7 @@ import com.github.pagehelper.PageHelper;
 import com.onlineLibrary.DTO.BooksPageQueryDTO;
 import com.onlineLibrary.DTO.CommentsDTO;
 import com.onlineLibrary.VO.BooksVO;
-import com.onlineLibrary.entity.Comments;
+import com.onlineLibrary.Entity.Comments;
 import com.onlineLibrary.mapper.BookPageMapper;
 import com.onlineLibrary.result.PageResult;
 import com.onlineLibrary.service.BookPageService;

@@ -2,7 +2,7 @@ package com.onlineLibrary.service;
 
 import com.onlineLibrary.DTO.UserDTO;
 import com.onlineLibrary.DTO.UsersPageQueryDTO;
-import com.onlineLibrary.entity.User;
+import com.onlineLibrary.Entity.User;
 import com.onlineLibrary.result.PageResult;
 
 import java.util.List;

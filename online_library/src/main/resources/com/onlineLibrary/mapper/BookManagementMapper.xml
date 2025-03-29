@@ -23,7 +23,7 @@
     </delete>
 
     <!--根据id查询书籍-->
-    <select id="getById" resultType="com.onlineLibrary.entity.Books">
+    <select id="getById" resultType="com.onlineLibrary.Entity.Books">
         select  * from book where id = #{id}
     </select>
 

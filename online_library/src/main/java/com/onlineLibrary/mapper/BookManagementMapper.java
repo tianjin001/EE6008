@@ -1,6 +1,6 @@
 package com.onlineLibrary.mapper;
 
-import com.onlineLibrary.entity.Books;
+import com.onlineLibrary.Entity.Books;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

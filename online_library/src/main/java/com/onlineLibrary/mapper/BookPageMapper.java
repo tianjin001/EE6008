@@ -4,7 +4,7 @@ import com.github.pagehelper.Page;
 import com.onlineLibrary.DTO.BooksPageQueryDTO;
 import com.onlineLibrary.VO.BooksVO;
 import com.onlineLibrary.annotation.AutoFill;
-import com.onlineLibrary.entity.Comments;
+import com.onlineLibrary.Entity.Comments;
 import com.onlineLibrary.enumeration.OperationType;
 import org.apache.ibatis.annotations.Mapper;
 

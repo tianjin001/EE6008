@@ -1,7 +1,7 @@
 package com.onlineLibrary.service;
 
 import com.onlineLibrary.DTO.BooksPageQueryDTO;
-import com.onlineLibrary.entity.Books;
+import com.onlineLibrary.Entity.Books;
 import com.onlineLibrary.result.PageResult;
 
 import java.util.List;

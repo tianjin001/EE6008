@@ -2,7 +2,7 @@ package com.onlineLibrary.mapper;
 
 import com.onlineLibrary.DTO.LoginDTO;
 import com.onlineLibrary.DTO.UserDTO;
-import com.onlineLibrary.entity.User;
+import com.onlineLibrary.Entity.User;
 import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface LoginMapper {

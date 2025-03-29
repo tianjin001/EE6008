@@ -2,7 +2,7 @@ package com.onlineLibrary.controller;
 
 
 import com.onlineLibrary.DTO.BooksPageQueryDTO;
-import com.onlineLibrary.entity.Books;
+import com.onlineLibrary.Entity.Books;
 import com.onlineLibrary.result.PageResult;
 import com.onlineLibrary.result.Result;
 import com.onlineLibrary.service.HomePageService;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.HashMap;
 import java.util.List;

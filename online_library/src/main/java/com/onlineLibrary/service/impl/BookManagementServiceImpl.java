@@ -1,10 +1,9 @@
 package com.onlineLibrary.service.impl;
 
 import com.onlineLibrary.DTO.BooksDTO;
-import com.onlineLibrary.entity.Books;
+import com.onlineLibrary.Entity.Books;
 import com.onlineLibrary.mapper.BookManagementMapper;
 import com.onlineLibrary.service.BookManagementService;
-import com.onlineLibrary.service.UserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

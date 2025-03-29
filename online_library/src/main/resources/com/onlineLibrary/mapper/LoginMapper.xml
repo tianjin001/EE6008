@@ -10,13 +10,13 @@
     values(#{username}, #{password})
     </insert>
 
-    <select id="select" resultType="com.onlineLibrary.entity.User">
+    <select id="select" resultType="com.onlineLibrary.Entity.User">
     select * from user where
     username = #{username}
     and password = #{password}
     </select>
 
-    <select id="selectByCondition" resultType="com.onlineLibrary.entity.User">
+    <select id="selectByCondition" resultType="com.onlineLibrary.Entity.User">
     select * from user
     where username = #{username}
     </select>

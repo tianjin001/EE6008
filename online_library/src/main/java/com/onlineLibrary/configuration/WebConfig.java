@@ -28,7 +28,8 @@ public class WebConfig implements WebMvcConfigurer {
                         "/register01",
                         "/logout",
                         "/home/**",
-                        "/book/**");
+                        "/book/**",
+                        "/publication/**");
 
     }
 

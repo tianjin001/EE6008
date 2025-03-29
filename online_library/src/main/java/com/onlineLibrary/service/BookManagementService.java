@@ -1,7 +1,7 @@
 package com.onlineLibrary.service;
 
 import com.onlineLibrary.DTO.BooksDTO;
-import com.onlineLibrary.entity.Books;
+import com.onlineLibrary.Entity.Books;
 
 import java.util.List;
 

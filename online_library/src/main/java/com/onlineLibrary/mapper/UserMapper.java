@@ -1,10 +1,9 @@
 package com.onlineLibrary.mapper;
 
 import com.github.pagehelper.Page;
-import com.onlineLibrary.DTO.UserDTO;
 import com.onlineLibrary.DTO.UsersPageQueryDTO;
 import com.onlineLibrary.VO.UserManagementVO;
-import com.onlineLibrary.entity.User;
+import com.onlineLibrary.Entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

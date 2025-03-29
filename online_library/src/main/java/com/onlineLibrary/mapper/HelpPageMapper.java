@@ -4,12 +4,11 @@ import com.github.pagehelper.Page;
 import com.onlineLibrary.DTO.RequestPageQueryDTO;
 import com.onlineLibrary.VO.RequestManagementVO;
 import com.onlineLibrary.annotation.AutoFill;
-import com.onlineLibrary.entity.ContactForm;
-import com.onlineLibrary.entity.RequestForm;
+import com.onlineLibrary.Entity.ContactForm;
+import com.onlineLibrary.Entity.RequestForm;
 import com.onlineLibrary.enumeration.OperationType;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 @Mapper

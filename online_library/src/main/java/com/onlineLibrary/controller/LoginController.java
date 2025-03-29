@@ -3,7 +3,7 @@ package com.onlineLibrary.controller;
 import com.onlineLibrary.DTO.LoginDTO;
 import com.onlineLibrary.DTO.UserDTO;
 import com.onlineLibrary.VO.LoginVO;
-import com.onlineLibrary.entity.User;
+import com.onlineLibrary.Entity.User;
 import com.onlineLibrary.result.Result;
 import com.onlineLibrary.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,7 +3,7 @@ package com.onlineLibrary.mapper;
 import com.github.pagehelper.Page;
 import com.onlineLibrary.DTO.BooksPageQueryDTO;
 import com.onlineLibrary.VO.BooksVO;
-import com.onlineLibrary.entity.Books;
+import com.onlineLibrary.Entity.Books;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
